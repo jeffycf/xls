@@ -20,12 +20,11 @@ static void OutputNumber(const double number);
 
 static void appendString(char * str)
 {
-	if (strlen(lines) > size){
+	if (strlen(lines)+strlen(str) > size){
 		lines = realloc(lines,2 * size);
 		size = 2 *size;
-	} else {
-		strcat(lines,str);
 	}
+	strcat(lines,str);
 }
 
 int readSheet(char * filename, char * sheetName) {
